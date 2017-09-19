@@ -5,79 +5,87 @@
     <title>Title</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
     <link rel="stylesheet" href="font-awesome.min.css" />
-    <!--<link rel="stylesheet" type="text/css" href="reset.css"/>-->
     <style>
+		body{
+			font-size: 100%;
+			/*background:#DDDDDD*/
+		}
+	    *{
+	        box-sizing: border-box;
+	        padding: 0;
+	        margin: 0;
+	        text-align: center;
+	        overflow: hidden;
+	    }
+	    a{
+	    	text-decoration: none;
+	    }
+	    
+	    .clear
+		{
+			clear: both;
+		}
+	    
+	    /*==============================================================================*/
+	   
+	   
+	   	.nav
+	   	{
+	   		height: 50px;
+	   		line-height: 50px;
+	   	}
+	    .list_container
+	    {
+	    	width: 100%;
+	    }
+	    .list_container  ul{
+	        margin: 10px auto;
+	        list-style: none;
+	        overflow: hidden;
+	        border-top:  solid 1px #ddd;
+	    }
+	    
+	    
+	    .list_container li{
+	        float: left;
+	        width: calc(100%/3);
+	    }
+	    .list_container li:nth-child(3n+1) a,.list_container li:nth-child(3n+2) a{
+	        border-right: solid 1px #ddd
+	    }
+	    
+	    .list_container li a{
+	    	display: block;
+	        height: 50px;
+	        line-height: 50px;
+	        border-bottom: solid 1px #ddd
+	    }
 	
-	body{
-		font-size: 100%;
-	}
-	
-    *{
-        box-sizing: border-box;
-    }
-    a{
-    	text-decoration: none;
-    }
-    
-    .list_container
-    {
-    	width: 100%;
-    }
-    ul{
-        font-size: 16px;
-        margin: 10px auto;
-        list-style: none;
-    }
-    li{
-        float: left;
-        width: calc(100%/3);
-        list-style: none;
-    }
-    
-    /*ul:after
-    {
-    	content: '';
-    	display: block;
-    	clear: both;
-    }*/
-
-	.clear
-	{
-		clear: both;
-	}
-
-    a{
-        display: block;
-        height: 50px;
-        width: 50px;
-        line-height: 50px;
-    }
-    .service span
-    {
-    	display: block;
-    	height: 30px;
-    	line-height: 30px;
-    }
-    .service>div
-    {
-    	float: left;
-    	text-align: center;
-    	width: 50%;
-    }
-    .service>div:first-of-type
-    {
-    	border-right: 1px solid #CCCCCC;
-    }
-    
+	    .service > div
+	    {
+	    	float: left;
+	    	width: 50%;
+	    }
+	    .service > div:first-of-type
+	    {
+	    	border-right: 1px solid #CCCCCC;
+	    }
+    	
+    	.service span
+	    {
+	    	display: block;
+	    	height: 30px;
+	    	line-height: 30px;
+	    }
     
     </style>
 </head>
 <body>
+	
+	<div class="nav">导航</div>
+	
 	<div class="list_container">
-		<div id="">
-			
-		</div>
-		<ul>
+		<ul  class="ul_list">
 		    <li><a href="#">test</a></li>
 		    <li><a href="#">test</a></li>
 		    <li><a href="#">test</a></li>
@@ -94,18 +102,22 @@
 		    <li><a href="#">test</a></li>
 		    <li><a href="#">test</a></li>
 		</ul>
-<div class="service">
-	<!--<span></span>-->
-	<div class="phone">
-		<span> 联系方式 </span>
-		<span>1310000000</span>
+		<div class="service">
+			<div class="phone">
+				<span> 联系方式 </span>
+				<span>1310000000</span>
+			</div>
+			<div class="download">
+				<span>下载app</span>
+				<span><i class="icon-cloud-download"></i></span>
+			</div>
+		</div>
 	</div>
-	<div class="download">
-		<span>下载app</span>
-		<span><i class="icon-cloud-download"></i></span>
-	</div>
-</div>
-	</div>
+	
+	<div class="img_list">图片列表</div>
+	<div class="img_banner"></div>
+	<div class="subject"></div>
+	
 
 </body>
 </html>
