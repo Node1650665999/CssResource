@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
     <link rel="stylesheet" href="font-awesome.min.css" />
     <style>
+    	/*===================================公共设置===========================================*/
 		body{
 			font-size: 100%;
 			/*background:#DDDDDD*/
@@ -14,7 +15,6 @@
 	        box-sizing: border-box;
 	        padding: 0;
 	        margin: 0;
-	        text-align: center;
 	        overflow: hidden;
 	    }
 	    a{
@@ -26,17 +26,95 @@
 			clear: both;
 		}
 	    
-	    /*==============================================================================*/
+	    /*=======================================公共设置======================================*/
 	   
-	   
-	   	.nav
+	
+	    /**************************导航栏的第一个版本**************************/
+	   /* .nav{
+	   	font-size: 0px;
+	   }
+	   	.nav .nav_left, .nav .nav_center, .nav .nav_right
 	   	{
+	   		display: inline-block;
 	   		height: 50px;
 	   		line-height: 50px;
+	   		vertical-align: middle;
+	   		font-size: 16px;
 	   	}
+	   	
+	   	.nav .nav_left, .nav .nav_right{
+	   		width: 15%;
+	   		text-align: center;
+	   	}
+	   	.nav .nav_center{
+	   		width: 70%;
+	   		overflow: hidden;
+	   		position: relative;
+	   	}*/
+	   	
+	   	/**************************导航栏的第二个版本**************************/
+	   	.nav
+	   	{
+	   		position: relative;
+	   		height: 50px;
+	   		line-height: 50px;
+	    }
+	   	.nav .nav_left{
+	   		width: 20%;
+	   		position: absolute;
+	   		top: 0;
+	   		left: 0;
+	   		text-align: center;
+	   	}
+	   	
+	   	.nav .nav_right{
+	   		width: 20%;
+	   		position: absolute;
+	   		top: 0;
+	   		right: 0;
+   		}
+   		.nav .nav_center{
+   			margin: 0 20%;
+   		}
+	   	
+	   	.nav .nav_center .search_box{
+	   		height: 30px;
+	   		line-height: 30px;
+	   		margin: 10px 0;
+	   		background: #DDDDDD;
+	   		border-radius: 2px;
+	   		float: left;
+	   		width: 80%;
+	   		position: relative;
+    		text-indent: 10px;
+    		
+	   	}
+	   	.nav .nav_center .search_box:focus{
+	   		outline: none;
+	   	}
+   		.nav .nav_center .search_box .icon-search{
+   			position: absolute;
+		    top: 0;
+		    left: 0;
+		    line-height: 30px;
+   		}
+	   	.nav .nav_center .search_btn{
+	   		height: 30px;
+	   		line-height: 30px;
+	   		margin: 10px 0;
+	   		background: red;
+	   		float: right;
+	   		width: 20%;
+	   		text-align: center;
+	   	}
+	   	
+	   	
+	   	
+	   	
 	    .list_container
 	    {
 	    	width: 100%;
+	    	text-align: center;
 	    }
 	    .list_container  ul{
 	        margin: 10px auto;
@@ -61,6 +139,11 @@
 	        border-bottom: solid 1px #ddd
 	    }
 	
+	    .service
+	    {
+	    	border-top: 1px solid #ddd;
+	    	border-bottom: 1px solid #ddd;
+	    }
 	    .service > div
 	    {
 	    	float: left;
@@ -81,8 +164,21 @@
     </style>
 </head>
 <body>
-	
-	<div class="nav">导航</div>
+	<div class="nav">
+		<div class="nav_left"><span>首页</span></div>
+		<div class="nav_center">
+			<div  class="search_box"  contenteditable="true">
+				<i class=" icon-search"></i>
+			</div>
+			<div class="search_btn">搜索</div>
+			<!--<div  class="search_box">
+				<input type="search" name="" id="" value="" />
+				<i class=" icon-search"></i>
+			</div>
+			<div class="search_btn">搜索</div>-->
+		</div>
+		<div class="nav_right">导航</div>
+	</div>
 	
 	<div class="list_container">
 		<ul  class="ul_list">
