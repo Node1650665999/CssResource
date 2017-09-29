@@ -1,0 +1,100 @@
+<html>
+	<head>
+		<title></title>
+		
+	<style>
+		*{
+		    margin: 0;
+   			padding: 0;
+   			box-sizing: border-box;
+		}
+		p{
+			height: 50px;
+			line-height: 50px;
+		}
+
+		/*========================左栏自适应,右栏固定==============================*/
+		/*float+负margin*/
+		.box{overflow: hidden;}
+		.column-left{width:100%;float:left;margin-right:-200px;background:red;}
+		.column-right{width:200px;float:left;background:yellow}
+		
+		/*float+margin第二种兄弟元素自动环绕，注意:需清除浮动*/
+		/*.column-left{float:right;width:200px;background: red;}
+		.column-right{margin-right:200px;background: yellow;}*/
+		
+		/*position,注意:父元素也要定位*/		
+		/*.box{ position: relative; } 
+		.column-left{width:100%;background:red;}
+		.column-right{width:200px;position:absolute;top:0;right:0;background:yellow;}*/
+		
+		/*float+BFC,注意:这种左栏html结构要在右栏后面*/
+		/*.column-left{background:red;overflow: hidden;}
+		.column-right{width:200px;float:right;background:yellow;}*/
+		
+		/*table*/
+		/*.box{width: 100%;display: table;} 
+		.column-left{display: table-cell;background:red;}
+		.column-right{width:200px;display: table-cell;background:yellow}*/
+		
+		/*inline-block+calc*/
+		/*.box{font-size: 0;}
+		.column-left{width:calc(100% - 200px);font-size: 16px;display:inline-block;background:red;}
+		.column-right{width:200px;font-size: 16px;display:inline-block;background:yellow}*/
+		
+		/*flex*/
+		/*.box{display: flex;}
+		.column-left{flex: 1;background:red;}
+		.column-right{width:200px;background:yellow}*/
+		
+		
+		/*========================左栏固定,右栏自适应==============================*/
+		/*float+负margin*/
+		/*.box{overflow: hidden;}
+		.column-left{float:left;width:200px;background: red;}
+		.column-right{float:left;width:100%;margin-right:-200px;background: yellow;}*/
+		
+		/*float+margin第二种兄弟元素自动环绕，注意:需清除浮动*/
+		/*.column-left{float:left;width:200px;background: red;}
+		.column-right{margin-left:200px;background: yellow;}*/
+		
+		/*position,注意:父元素也要定位*/		
+		/*.box{ position: relative; } 
+		.column-left{width:100%; background: red;}
+		.column-right{width: 200px;position:absolute; top:0; left:0; background: yellow;}*/
+	
+		/*float+BFC*/
+		/*.column-left{width:200px;float:left;background:red;}
+		.column-right{overflow: hidden;background:yellow}*/
+		
+		/*table*/
+		/*.box{width: 100%;display:table;} 
+		.column-left{width:200px;display: table-cell;background:red;}
+		.column-right{display: table-cell;background:yellow}	*/
+		
+		/*inline-block+calc*/
+		/*.box{font-size: 0;}
+		.column-left{width:200px;font-size: 16px;display:inline-block;background:red;}
+		.column-right{width:calc(100% - 200px);font-size: 16px;display:inline-block;background:yellow}*/
+		
+		/*flex*/
+		/*.box{display: flex;}
+		.column-left{width:200px;background:red;}
+		.column-right{flex:1;background:yellow}*/
+	
+	</style>
+		
+	</head>
+	
+<body>
+	<div class="box">
+	    <div class="column-left">
+	        <p>左栏</p>
+	    </div>
+	    <div class="column-right">
+	        <p>右栏</p>
+	    </div>
+	</div>
+	</div>
+	</body>
+</html>
