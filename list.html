@@ -9,50 +9,32 @@
     	/*===================================公共设置===========================================*/
 		body{
 			font-size: 100%;
+			height: 2000px;
 			/*background:#DDDDDD*/
 		}
 	    *{
 	        box-sizing: border-box;
 	        padding: 0;
 	        margin: 0;
-	        overflow: hidden;
 	    }
 	    a{
 	    	text-decoration: none;
+	    }
+	    
+	    ul{
+	    	list-style: none;
 	    }
 	    
 	    .clear
 		{
 			clear: both;
 		}
+		
 	    
 	    /*=======================================公共设置======================================*/
 	   
 	
-	    /**************************导航栏的第一个版本**************************/
-	   /* .nav{
-	   	font-size: 0px;
-	   }
-	   	.nav .nav_left, .nav .nav_center, .nav .nav_right
-	   	{
-	   		display: inline-block;
-	   		height: 50px;
-	   		line-height: 50px;
-	   		vertical-align: middle;
-	   		font-size: 16px;
-	   	}
-	   	
-	   	.nav .nav_left, .nav .nav_right{
-	   		width: 15%;
-	   		text-align: center;
-	   	}
-	   	.nav .nav_center{
-	   		width: 70%;
-	   		overflow: hidden;
-	   		position: relative;
-	   	}*/
-	   	
-	   	/**************************导航栏的第二个版本**************************/
+	    /**************************导航栏**************************/
 	   	.nav
 	   	{
 	   		position: relative;
@@ -66,55 +48,59 @@
 	   		left: 0;
 	   		text-align: center;
 	   	}
-	   	
 	   	.nav .nav_right{
 	   		width: 20%;
 	   		position: absolute;
 	   		top: 0;
 	   		right: 0;
+	   		text-align: center;
    		}
    		.nav .nav_center{
-   			margin: 0 20%;
+   			margin: 0  20%;
+   			overflow: hidden;
    		}
-	   	
 	   	.nav .nav_center .search_box{
-	   		height: 30px;
-	   		line-height: 30px;
 	   		margin: 10px 0;
 	   		background: #DDDDDD;
 	   		border-radius: 2px;
-	   		float: left;
-	   		width: 80%;
 	   		position: relative;
-    		text-indent: 10px;
+	   		overflow: hidden;
+	   	}
+	   	.nav_center  .search{
+		    width: 100%;
+		    float: left;
+    		margin-right: -80px;
+		    text-indent: 13px;
+		    background: transparent;
+		    border: 0px;
+		    outline: none;
+		    height: 30px;
+		    display: block;
     		
 	   	}
-	   	.nav .nav_center .search_box:focus{
-	   		outline: none;
-	   	}
    		.nav .nav_center .search_box .icon-search{
-   			position: absolute;
-		    top: 0;
+		    position: absolute;
 		    left: 0;
+		    top: 0;
 		    line-height: 30px;
+		    font-size: 12px;
+		    margin-right: 10px;
    		}
 	   	.nav .nav_center .search_btn{
 	   		height: 30px;
 	   		line-height: 30px;
-	   		margin: 10px 0;
 	   		background: red;
-	   		float: right;
-	   		width: 20%;
+	   		float: left;
+	   		max-width: 80px;
+	   		width: 80px;
 	   		text-align: center;
 	   	}
-	   	
-	   	
-	   	
-	   	
+	   	/*=============================list_container==================================*/
 	    .list_container
 	    {
 	    	width: 100%;
 	    	text-align: center;
+	    	margin-bottom: 20px;
 	    }
 	    .list_container  ul{
 	        margin: 10px auto;
@@ -122,11 +108,9 @@
 	        overflow: hidden;
 	        border-top:  solid 1px #ddd;
 	    }
-	    
-	    
 	    .list_container li{
 	        float: left;
-	        width: calc(100%/3);
+	        width: 33.3333%;
 	    }
 	    .list_container li:nth-child(3n+1) a,.list_container li:nth-child(3n+2) a{
 	        border-right: solid 1px #ddd
@@ -138,23 +122,22 @@
 	        line-height: 50px;
 	        border-bottom: solid 1px #ddd
 	    }
-	
-	    .service
+	    .list_container  .service
 	    {
-	    	border-top: 1px solid #ddd;
+	    	border-top:    1px solid #ddd;
 	    	border-bottom: 1px solid #ddd;
+    	    overflow: hidden;
 	    }
-	    .service > div
+	    .list_container .service > div
 	    {
 	    	float: left;
 	    	width: 50%;
 	    }
-	    .service > div:first-of-type
+	    .list_container .service > div:first-of-type
 	    {
 	    	border-right: 1px solid #CCCCCC;
 	    }
-    	
-    	.service span
+    	.list_container .service span
 	    {
 	    	display: block;
 	    	height: 30px;
@@ -167,15 +150,11 @@
 	<div class="nav">
 		<div class="nav_left"><span>首页</span></div>
 		<div class="nav_center">
-			<div  class="search_box"  contenteditable="true">
+			<div  class="search_box">
+				<input type="search" name="" class="search" value="" />
+				<div class="search_btn">搜索</div>
 				<i class=" icon-search"></i>
 			</div>
-			<div class="search_btn">搜索</div>
-			<!--<div  class="search_box">
-				<input type="search" name="" id="" value="" />
-				<i class=" icon-search"></i>
-			</div>
-			<div class="search_btn">搜索</div>-->
 		</div>
 		<div class="nav_right">导航</div>
 	</div>
@@ -209,11 +188,273 @@
 			</div>
 		</div>
 	</div>
+	<style type="text/css">
+		.quick_entry .entry_list
+		{
+			overflow: hidden;
+		}
+		.quick_entry .entry_list li
+		{
+			width: 20%;
+			float: left;
+		}
+		.quick_entry .entry_list a
+		{
+			display: block;
+			width: 100%;
+			height: 60px;
+			text-align: center;
+		}
+		.quick_entry .entry_list a:hover
+		{
+			cursor: pointer;
+		}
+		.quick_entry .entry_list i 
+		{
+			display: block;
+			font-size: 30px;
+			line-height: 40px;
+			
+		}
+		.quick_entry .entry_list span 
+		{
+			display: block;
+			font-size: 12px;
+			line-height: 20px;
+		}
+	</style>
+	<div class="quick_entry">
+		<ul class="entry_list">
+			<li><a href="http://www.baidu.com"><i class="icon-twitter"></i><span>百度</span></a></li>
+			<li><a href="http://www.baidu.com"><i class="icon-twitter"></i><span>百度</span></a></li>
+			<li><a href="http://www.baidu.com"><i class="icon-twitter"></i><span>百度</span></a></li>
+			<li><a href="http://www.baidu.com"><i class="icon-twitter"></i><span>百度</span></a></li>
+			<li><a href="http://www.baidu.com"><i class="icon-twitter"></i><span>百度</span></a></li>
+			<li><a href="http://www.baidu.com"><i class="icon-twitter"></i><span>百度</span></a></li>
+			<li><a href="http://www.baidu.com"><i class="icon-twitter"></i><span>百度</span></a></li>
+			<li><a href="http://www.baidu.com"><i class="icon-twitter"></i><span>百度</span></a></li>
+			<li><a href="http://www.baidu.com"><i class="icon-twitter"></i><span>百度</span></a></li>
+			<li><a href="http://www.baidu.com"><i class="icon-twitter"></i><span>百度</span></a></li>
+		</ul>
+	</div>
+	<style type="text/css">
+	.img_list
+	{
+		margin: 20px  0;
+		font-size: 13px;
+	}
+	.img_list .head_line
+	{
+		position: relative;
+		line-height: 35px;
+		padding-left: 20px;
+	}
+	.img_list .head_line a
+	{
+		display: block;
+		position: absolute;
+		right: 20px;
+		top: 0;
+	}
+	.img_list .img_box
+	{
+		overflow: hidden;	
+	}
+	.img_list  .img_box >div
+	{
+		padding-right: 10px;
+	}
+	.img_list  .img_box .left
+	{
+		width: 50%;
+		float: left;
+	}
+	.img_list  .img_box .left>div
+	{
+		width: 50%;
+		float: left;
+	}
 	
-	<div class="img_list">图片列表</div>
-	<div class="img_banner"></div>
-	<div class="subject"></div>
+	.img_list  .img_box .left .left_item1
+	{
+		padding:0 3px 0 10px;
+	}
+	.img_list  .img_box .left img
+	{
+		height: 100px;
+		width: 100%;
+	}
+	.img_list  .img_box .left .left_item2 .desc
+	{
+		padding: 5px 0;
+		font-size: 13px;
+	}
+	.img_list  .img_box .left .left_item2 .price
+	{
+	    color: #c5b536;
+		line-height: 20px;
+	}
 	
-
+	.img_list  .img_box .center,.img_list  .img_box .right
+	{
+		float: left;
+		width: 25%;
+	}
+	.img_list .img_box .center,.img_list .img_box .right
+	{
+	    height: 100px;
+	    background: url(img/a.png);
+	    background-size: cover;
+	    background-clip: content-box;
+        background-size: 100% 100%;
+	}
+	
+	
+	</style>
+	<div class="img_list">
+		<div class="head_line">
+			<div><span>这时一段文字，需要限制文字长度</span></div>
+			<a href=""><span>签到</span></a>
+		</div>
+		<div class="img_box">
+			<div class="left">
+				<div class="left_item1">
+					<img src="img/a.png"/>
+				</div>
+				<div class="left_item2">
+					<div class="desc"><span>俄罗斯浪漫双首都三飞8天深度之旅游</span></div>	
+					<div class="price"><span>¥</span><span>7988</span></div>
+					<div class="time"><span>19:02:26:36</span></div>
+				</div>
+			</div>
+			<div class="center">
+			</div>
+			<div class="right">
+			</div>
+		</div>
+	</div>
+	<style type="text/css">
+		.tab_box .tab_desc, .tab_box .tab_list
+		{
+			overflow: hidden;
+			margin-bottom: 5px;
+		}
+		.tab_box .tab_desc .tab_item {
+			width: 25%;
+			float: left;
+			padding: 0 5px;
+		}
+		.tab_box .tab_desc .tab_item span{
+			display: block;
+			text-align: center;
+			line-height: 50px;
+			font-size: 20px;
+		}
+		.tab_box .tab_desc .tab_item:hover span
+		{
+			color: #2dbb55;
+			cursor: pointer;
+		}
+		
+		.tab_box .tab_list>li
+		{
+			width: 25%;
+			float: left;
+			padding: 0 5px;
+		}
+		.tab_box .tab_list li span
+		{
+			height: 30px;
+			display: block;
+			text-align: center;
+			border: 1px solid #2dbb55;
+			border-radius: 3px;
+			color:#2dbb55;
+			margin-top: 5px;
+		}
+		.tab_box  .tab_banner
+		{
+			position: relative;
+			color: #fff;
+		}
+		.tab_box .tab_banner img
+		{
+			width: 100%;
+			height: 150px;
+		}
+		.tab_box .tab_banner .item1
+		{
+		    position: absolute;
+		    top: 20px;
+		    left: 20px;
+		    border-radius: 20px;
+		    background: rgba(0, 0, 0, 0.5);
+		    text-align: center;
+		}
+		.tab_box .tab_banner .item1 span
+		{
+		    padding: 0 2px;
+		}
+		.tab_box .tab_banner .item2
+		{
+		    width: 100px;
+		    position: absolute;
+		    bottom: 15px;
+		    left: 20px;
+		    text-align: center;
+		    border-radius: 3px;
+		    overflow: hidden;
+		}
+		.tab_box .tab_banner .item2 span:nth-of-type(1)
+		{
+		    display: block;
+		    line-height: 30px;
+		    background: #f70;
+		}
+		.tab_box .tab_banner .item2 span:nth-of-type(2)
+		{
+		    display: block;
+		    line-height: 15px;
+		    background: #484848;
+		}
+		.tab_box .tab_banner .item3
+		{
+		    width: 100px;
+		    position: absolute;
+		    bottom: 20px;
+		    right: 20px;
+		    border-radius: 20px;
+		    background: rgba(0, 0, 0, 0.5);
+		}
+		
+	</style>
+	<div class="tab_box">
+		<ul class="tab_desc">
+			<li class="tab_item"><span>当季热推</span></li>
+			<li class="tab_item"><span>当季热推</span></li>
+			<li class="tab_item"><span>当季热推</span></li>
+			<li class="tab_item"><span>当季热推</span></li>
+		</ul>
+		<ul class="tab_list">
+			<li><span>test</span></li>
+			<li><span>test</span></li>
+			<li><span>test</span></li>
+			<li><span>test</span></li>
+			<li><span>test</span></li>
+			<li><span>test</span></li>
+			<li><span>test</span></li>
+			<li><span>test</span></li>
+		</ul>
+		
+		<div class="tab_banner">
+			<div>
+				<img src="img/b.jpg"/>
+			</div>
+			<div class="item1"><span>some</span><span>|</span><span>some</span></div>
+			<div class="item2"><span>some</span><span>some</span></div>
+			<div class="item3"><span>some</span><span>some</span></div>
+		</div>
+		
+	</div>
 </body>
 </html>
