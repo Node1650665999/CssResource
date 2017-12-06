@@ -1,5 +1,6 @@
-pages commit
+﻿pages commit
 commit row 2
+<<<<<<< HEAD
 commit row 3
 asfasdf
 ASD
